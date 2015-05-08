@@ -28,7 +28,7 @@ func getListOfGroups()([]Scrapper) {
   groups = append(groups,MeetupGroup{url: "http://www.meetup.com/Tech-Nottingham/", name: "Tech Nottingham"})
   groups = append(groups,MeetupGroup{url: "http://www.meetup.com/NottinghamProgrammers/", name: "Nottingham Programmers"})
   groups = append(groups,MeetupGroup{url: "http://www.meetup.com/Nottingham-AWS-Meetup/", name: "Nottingham AWS Meetup"})
-
+  groups = append(groups,WebAPIGroup{url: "secondwednesday.org.uk", name: "Second Wednesday"})
   return groups
 }
 
