@@ -3,6 +3,7 @@ package main
 import (
   "log"
   "strings"
+"fmt"
 
   "github.com/PuerkitoBio/goquery"
 )
@@ -19,14 +20,14 @@ func main() {
 }
 
 func getListOfGroups()([]Scrapper) {
-  groups := [...]Scrapper{}
+  groups := []Scrapper{}
 
   groups = append(groups,MeetupGroup{url: "http://www.meetup.com/Mobile-Notts/", name: "Mobile Notts"})
   groups = append(groups,MeetupGroup{url: "http://www.meetup.com/dotnetnotts/", name: "Dot Net Notts"})
   groups = append(groups,MeetupGroup{url: "http://www.meetup.com/Nott-Tuesday-Getting-Nottinghams-tech-scene-together/", name: "Nott Tuesday"})
-  groups = append(groups,MeetupGroup{url: "http://www.meetup.com/Tech-Nottingham/", name: "Tech Nottingham"})
-  groups = append(groups,MeetupGroup{url: "http://www.meetup.com/NottinghamProgrammers/", name: "Nottingham Programmers"})
-  groups = append(groups,MeetupGroup{url: "http://www.meetup.com/Nottingham-AWS-Meetup/", name: "Nottingham AWS Meetup"})
+ // groups = append(groups,MeetupGroup{url: "http://www.meetup.com/Tech-Nottingham/", name: "Tech Nottingham"})
+  //groups = append(groups,MeetupGroup{url: "http://www.meetup.com/NottinghamProgrammers/", name: "Nottingham Programmers"})
+  //groups = append(groups,MeetupGroup{url: "http://www.meetup.com/Nottingham-AWS-Meetup/", name: "Nottingham AWS Meetup"})
 
   return groups
 }
@@ -72,7 +73,7 @@ func (g MeetupGroup) Scrape() []Event {
       var evnt = Event{eventname: title, description: description, groupname:g.name}
 
       events = append(events,evnt)
-      
+      fmt.Println(description)
     })
 
 
